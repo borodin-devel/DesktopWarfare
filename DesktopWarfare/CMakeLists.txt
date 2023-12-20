@@ -1,6 +1,8 @@
 ﻿# CMakeList.txt : CMake project for DesktopWarfare, include source and define
 # project specific logic here.
 
+include(BuildInfo)
+
 # Add source to this project's executable.
 add_executable (DesktopWarfare "DesktopWarfare.cpp" )
 target_link_libraries(DesktopWarfare
@@ -9,6 +11,8 @@ target_link_libraries(DesktopWarfare
         raylib_cpp
         Boost::program_options
 )
+
+BuildInfo(DesktopWarfare)
 
 if(CMAKE_VERSION VERSION_GREATER 3.12)
     set_property(TARGET DesktopWarfare PROPERTY CXX_STANDARD 20)

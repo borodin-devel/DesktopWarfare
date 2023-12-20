@@ -25,17 +25,16 @@ message("\nCMake module paths: ${CMAKE_MODULE_PATH}")
 
 # Include sub-projects
 message("\nFetching dependencies")
+
 # raylib dependency
 FetchContent_Declare(
     raylib
     GIT_REPOSITORY https://github.com/raysan5/raylib.git
     GIT_TAG ae50bfa2cc569c0f8d5bc4315d39db64005b1b08 # version 5.0
 )
-
 #set(raylib_VERBOSE 1)
 set(raylib_BUILD_EXAMPLES OFF CACHE BOOL "Build Raylib examples" FORCE)
 set(raylib_BUILD_GAMES OFF CACHE BOOL "Build Raylib games" FORCE)
-
 FetchContent_MakeAvailable(raylib)
 
 # raylib-cpp dependency
@@ -44,7 +43,6 @@ FetchContent_Declare(
     GIT_REPOSITORY https://github.com/RobLoach/raylib-cpp.git
     GIT_TAG 34748ebbecdeaa1868eb2985e8679ba11df84b96 # version 5.0.0
 )
-
 FetchContent_MakeAvailable(raylib_cpp)
 
 # Boost dependency
@@ -54,15 +52,12 @@ FetchContent_Declare(
     URL_MD5 6cf0cdd797bca685910d527ae3c08cb3
     DOWNLOAD_EXTRACT_TIMESTAMP ON
 )
-
 set(Boost_USE_STATIC_LIBS ON)  # only find static libs
 set(Boost_USE_DEBUG_LIBS ON)
 set(Boost_USE_RELEASE_LIBS ON)
 set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME OFF)
-
 set(BOOST_INCLUDE_LIBRARIES program_options)
-
 FetchContent_MakeAvailable(Boost)
 
 cmake_print_properties(

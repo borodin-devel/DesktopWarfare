@@ -5,6 +5,8 @@
 #include <boost/program_options.hpp>
 #include "raylib-cpp.hpp"
 
+#include "buildinfo.h"
+
 namespace po = boost::program_options;
 
 //------------------------------------------------------------------------------------
@@ -12,6 +14,11 @@ namespace po = boost::program_options;
 //------------------------------------------------------------------------------------
 int main(int argc, char* argv[])
 {
+    std::cout << "DesktopWarfare v" << BuildInfo::Version
+        << " - Built: " << BuildInfo::Timestamp
+        << " - SHA: " << BuildInfo::CommitSHA
+        << std::endl;
+
     try {
         po::options_description desc("Desktop Warfare command line options:");
         desc.add_options()
