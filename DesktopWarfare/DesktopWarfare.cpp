@@ -1,22 +1,29 @@
 ﻿// DesktopWarfare.cpp : Defines the entry point for the application.
 //
 
-#include <iostream>
+#include <filesystem>
 #include <boost/program_options.hpp>
 #include "raylib-cpp.hpp"
 
 #include "buildinfo.h"
+#include "Utilities/Logger.h"
 
 namespace po = boost::program_options;
+
+const std::filesystem::path executablePath = std::filesystem::current_path();
 
 //------------------------------------------------------------------------------------
 // Program main entry point
 //------------------------------------------------------------------------------------
 int main(int argc, char* argv[])
 {
-    std::cout << "DesktopWarfare v" << BuildInfo::Version
+    Logger logger;
+    logger.init();
+
+    BOOST_LOG_TRIVIAL(info) << "DesktopWarfare v" << BuildInfo::Version
         << " - Built: " << BuildInfo::Timestamp
         << " - SHA: " << BuildInfo::CommitSHA
+        << "\nPath: " << executablePath.string()
         << std::endl;
 
     try {
@@ -37,9 +44,7 @@ int main(int argc, char* argv[])
         const int windowHeight = 600;
 
         // Enable config flags for resizable window and vertical synchro
-        raylib::Window window(windowWidth, windowHeight,
-            "Desktop Warfare",
-            FLAG_WINDOW_RESIZABLE | FLAG_VSYNC_HINT);
+        raylib::Window window(windowWidth, windowHeight, "Desktop Warfare", FLAG_VSYNC_HINT);
         window.SetMinSize(320, 240);
 
         window.SetTargetFPS(60); // Set our game to run at 60 frames-per-second
@@ -55,7 +60,7 @@ int main(int argc, char* argv[])
         }
     }
     catch (std::exception& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
+        BOOST_LOG_TRIVIAL(fatal) << "Fatal error: " << e.what() << std::endl;
         return EXIT_FAILURE;
     }
 

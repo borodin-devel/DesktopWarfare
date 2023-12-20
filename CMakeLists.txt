@@ -57,7 +57,7 @@ set(Boost_USE_DEBUG_LIBS ON)
 set(Boost_USE_RELEASE_LIBS ON)
 set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME OFF)
-set(BOOST_INCLUDE_LIBRARIES program_options)
+set(BOOST_INCLUDE_LIBRARIES program_options log date_time)
 FetchContent_MakeAvailable(Boost)
 
 cmake_print_properties(
@@ -65,6 +65,8 @@ cmake_print_properties(
         raylib
         raylib_cpp
         Boost::program_options
+        Boost::log
+        Boost::date_time
     PROPERTIES
         NAME
         TYPE
