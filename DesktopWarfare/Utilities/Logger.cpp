@@ -46,7 +46,7 @@ std::string formatMilliseconds(std::chrono::milliseconds ms) {
         + std::to_string(ms.count());
 }
 
-void Logger::init() {
+void init_logger() {
     logging::add_common_attributes();
 
     // Set up the console sink
