@@ -20,14 +20,9 @@ void WindowSystem::init()
     m_window->SetMinSize(settingsSystem.m_windowMinWidth, settingsSystem.m_windowMinHeight);
 
     m_window->SetTargetFPS(settingsSystem.m_windowTargetFPS);
+}
 
-    // Main game loop
-    while(!m_window->ShouldClose()) // Detect window close button or ESC key
-    {
-        ClearBackground(BLACK);
-
-        BeginDrawing();
-        DrawText("Desktop Warfare", 10, 25, 20, WHITE);
-        EndDrawing();
-    }
+bool WindowSystem::shouldClose()
+{
+    return m_window->ShouldClose();
 }

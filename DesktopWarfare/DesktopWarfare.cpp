@@ -23,14 +23,7 @@ int main(int argc, char* argv[])
     try {
         SystemManager systemManager;
         systemManager.m_programOptionsSystem.init(argc, argv);
-
-        while (systemManager.mustReinitialize()) {
-            systemManager.setMustReinitialize(false);
-
-            //systemManager.m_settingsSystem.init();
-
-            systemManager.m_windowSystem.init();
-        }
+        systemManager.m_gameSystem.start();
     }
     catch (std::exception& e) {
         BOOST_LOG_TRIVIAL(fatal) << "Fatal error: " << e.what() << std::endl;

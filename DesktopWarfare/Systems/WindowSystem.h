@@ -13,6 +13,7 @@ public:
     ~WindowSystem() = default;
 
     void init();
+    bool shouldClose();
 
 private:
     SystemManager& m_systemManager;
