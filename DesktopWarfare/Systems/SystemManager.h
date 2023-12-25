@@ -13,9 +13,9 @@ public:
     void setMustReinitialize(bool mustReinitialize) { m_mustReinitialize = mustReinitialize; }
     bool mustReinitialize() const { return m_mustReinitialize; }
 
-    ProgramOptionsSystem m_programOptionsSystem;
-    SettingsSystem m_settingsSystem;
-    WindowSystem m_windowSystem = WindowSystem(m_settingsSystem);
+    ProgramOptionsSystem m_programOptionsSystem = ProgramOptionsSystem(*this);
+    SettingsSystem m_settingsSystem = SettingsSystem(*this);
+    WindowSystem m_windowSystem = WindowSystem(*this);
 
 private:
     bool m_mustReinitialize = true;

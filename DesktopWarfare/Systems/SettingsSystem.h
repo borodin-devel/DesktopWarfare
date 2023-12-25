@@ -1,10 +1,12 @@
 #pragma once
 
+class SystemManager;
+
 class SettingsSystem
 {
 public:
-    SettingsSystem();
-    ~SettingsSystem();
+    SettingsSystem(SystemManager& systemManager);
+    ~SettingsSystem() = default;
 
     const char* m_windowTitle = "Desktop Warfare";
     const int m_windowMinWidth = 320;
@@ -14,4 +16,7 @@ public:
     int m_windowTargetFPS = 60;
     bool m_windowFullscreen = false;
     bool m_windowsVSync = true;
+
+private:
+    SystemManager& m_systemManager;
 };

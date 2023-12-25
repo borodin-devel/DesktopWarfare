@@ -2,19 +2,19 @@
 
 #include <memory>
 
-#include "SettingsSystem.h"
-
 #include "raylib-cpp.hpp"
+
+class SystemManager;
 
 class WindowSystem
 {
 public:
-    WindowSystem(SettingsSystem& settingsSystem);
+    WindowSystem(SystemManager& systemManager);
     ~WindowSystem() = default;
 
     void init();
 
 private:
-    SettingsSystem& m_settingsSystem;
+    SystemManager& m_systemManager;
     std::unique_ptr<raylib::Window> m_window;
 };

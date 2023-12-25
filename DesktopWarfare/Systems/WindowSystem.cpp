@@ -1,21 +1,25 @@
 #include "WindowSystem.h"
 
-WindowSystem::WindowSystem(SettingsSystem& settingsSystem)
-    : m_settingsSystem(settingsSystem)
+#include "SystemManager.h"
+
+WindowSystem::WindowSystem(SystemManager& systemManager)
+    : m_systemManager(systemManager)
 {
 }
 
 void WindowSystem::init()
 {
+    SettingsSystem& settingsSystem = m_systemManager.m_settingsSystem;
+
     // Enable config flags for resizable window and vertical synchro
     m_window = std::make_unique<raylib::Window>(
-        m_settingsSystem.m_windowWidth,
-        m_settingsSystem.m_windowHeight,
-        m_settingsSystem.m_windowTitle,
+        settingsSystem.m_windowWidth,
+        settingsSystem.m_windowHeight,
+        settingsSystem.m_windowTitle,
         FLAG_VSYNC_HINT);
-    m_window->SetMinSize(m_settingsSystem.m_windowMinWidth, m_settingsSystem.m_windowMinHeight);
+    m_window->SetMinSize(settingsSystem.m_windowMinWidth, settingsSystem.m_windowMinHeight);
 
-    m_window->SetTargetFPS(m_settingsSystem.m_windowTargetFPS);
+    m_window->SetTargetFPS(settingsSystem.m_windowTargetFPS);
 
     // Main game loop
     while(!m_window->ShouldClose()) // Detect window close button or ESC key

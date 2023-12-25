@@ -1,9 +1,9 @@
 #include "SettingsSystem.h"
 
-SettingsSystem::SettingsSystem()
-{
-}
+#include "SystemManager.h"
 
-SettingsSystem::~SettingsSystem()
+SettingsSystem::SettingsSystem(SystemManager& systemManager)
+    : m_systemManager(systemManager)
 {
+    // Load settings from file
 }

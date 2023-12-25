@@ -1,8 +1,9 @@
 #include "ProgramOptionsSystem.h"
-
+#include "SystemManager.h"
 #include <iostream>
 
-ProgramOptionsSystem::~ProgramOptionsSystem()
+ProgramOptionsSystem::ProgramOptionsSystem(SystemManager& systemManager)
+    : m_systemManager(systemManager)
 {
 }
 
