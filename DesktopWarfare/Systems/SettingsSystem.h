@@ -1,8 +1,6 @@
 #pragma once
 
-#include "SystemBase.h"
-
-class SettingsSystem : public SystemBase
+class SettingsSystem
 {
 public:
     SettingsSystem();

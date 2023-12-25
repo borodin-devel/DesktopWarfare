@@ -1,6 +1,5 @@
 #pragma once
 
-#include "SystemBase.h"
 #include "ProgramOptionsSystem.h"
 #include "SettingsSystem.h"
 #include "WindowSystem.h"

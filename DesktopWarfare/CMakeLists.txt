@@ -4,7 +4,7 @@
 include(BuildInfo)
 
 # Add source to this project's executable.
-add_executable (DesktopWarfare "DesktopWarfare.cpp" "Utilities/Logger.h" "Utilities/Logger.cpp" "Systems/SystemBase.h" "Systems/ProgramOptionsSystem.h" "Systems/ProgramOptionsSystem.cpp" "Systems/SystemManager.h"  "Systems/SettingsSystem.h"  "Systems/WindowSystem.h" "Systems/WindowSystem.cpp" "Systems/SettingsSystem.cpp")
+add_executable (DesktopWarfare "DesktopWarfare.cpp" "Utilities/Logger.h" "Utilities/Logger.cpp"  "Systems/ProgramOptionsSystem.h" "Systems/ProgramOptionsSystem.cpp" "Systems/SystemManager.h"  "Systems/SettingsSystem.h"  "Systems/WindowSystem.h" "Systems/WindowSystem.cpp" "Systems/SettingsSystem.cpp")
 
 if(CMAKE_VERSION VERSION_GREATER 3.12)
     set_property(TARGET DesktopWarfare PROPERTY CXX_STANDARD 20)

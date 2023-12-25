@@ -1,11 +1,10 @@
 #pragma once
 
-#include "SystemBase.h"
 #include <boost/program_options.hpp>
 
 namespace po = boost::program_options;
 
-class ProgramOptionsSystem : public SystemBase
+class ProgramOptionsSystem
 {
 public:
     ProgramOptionsSystem() = default;

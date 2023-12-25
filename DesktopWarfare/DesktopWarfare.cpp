@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <filesystem>
-#include "raylib-cpp.hpp"
 
 #include "buildinfo.h"
 #include "Utilities/Logger.h"

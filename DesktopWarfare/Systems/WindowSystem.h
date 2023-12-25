@@ -2,12 +2,11 @@
 
 #include <memory>
 
-#include "SystemBase.h"
 #include "SettingsSystem.h"
 
 #include "raylib-cpp.hpp"
 
-class WindowSystem : public SystemBase
+class WindowSystem
 {
 public:
     WindowSystem(SettingsSystem& settingsSystem);
