@@ -6,7 +6,7 @@
 
 #include "buildinfo.h"
 #include "Utilities/Logger.h"
-#include "Systems/SystemManager.h"
+#include "GameEngine.h"
 
 const std::filesystem::path executablePath = std::filesystem::current_path();
 
@@ -21,9 +21,9 @@ int main(int argc, char* argv[])
         << std::endl;
 
     try {
-        SystemManager systemManager;
-        systemManager.m_programOptionsSystem.init(argc, argv);
-        systemManager.m_gameSystem.start();
+        GameEngine gameEngine;
+        gameEngine.init(argc, argv);
+        gameEngine.run();
     }
     catch (std::exception& e) {
         BOOST_LOG_TRIVIAL(fatal) << "Fatal error: " << e.what() << std::endl;

@@ -4,18 +4,18 @@
 
 namespace po = boost::program_options;
 
-class SystemManager;
+class GameEngine;
 
-class ProgramOptionsSystem
+class GSProgramOptions
 {
 public:
-    ProgramOptionsSystem(SystemManager& systemManager);
-    ~ProgramOptionsSystem() = default;
+    GSProgramOptions(GameEngine& gameEngine);
+    ~GSProgramOptions() = default;
 
     void init(int argc, char* argv[]);
 
 private:
-    SystemManager& m_systemManager;
+    GameEngine& m_gameEngine;
     po::options_description m_description = po::options_description("Desktop Warfare command line options:");
     po::variables_map m_vm;
 };

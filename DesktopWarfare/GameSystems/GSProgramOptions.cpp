@@ -1,13 +1,13 @@
-#include "ProgramOptionsSystem.h"
-#include "SystemManager.h"
+#include "GSProgramOptions.h"
+#include "../GameEngine.h"
 #include <iostream>
 
-ProgramOptionsSystem::ProgramOptionsSystem(SystemManager& systemManager)
-    : m_systemManager(systemManager)
+GSProgramOptions::GSProgramOptions(GameEngine& gameEngine)
+    : m_gameEngine(gameEngine)
 {
 }
 
-void ProgramOptionsSystem::init(int argc, char* argv[])
+void GSProgramOptions::init(int argc, char* argv[])
 {
     m_description.add_options()
         ("help,h", "produce help message");
