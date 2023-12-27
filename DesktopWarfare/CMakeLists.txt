@@ -4,7 +4,7 @@
 include(BuildInfo)
 
 # Add source to this project's executable.
-add_executable (DesktopWarfare "DesktopWarfare.cpp" "Utilities/Logger.h" "Utilities/Logger.cpp" "GameEngine.h" "GameEngine.cpp" "GameSystems/GSProgramOptions.h" "GameSystems/GSProgramOptions.cpp" "GameSystems/GSSettings.cpp" "GameSystems/GSSettings.h" "GameSystems/GSWindow.h" "GameSystems/GSWindow.cpp" "GameSystems/GSInput.h" "GameSystems/GSInput.cpp")
+add_executable (DesktopWarfare "DesktopWarfare.cpp" "Utilities/Logger.h" "Utilities/Logger.cpp" "GameEngine.h" "GameEngine.cpp" "GameSystems/GSProgramOptions.h" "GameSystems/GSProgramOptions.cpp" "GameSystems/GSSettings.cpp" "GameSystems/GSSettings.h" "GameSystems/GSWindow.h" "GameSystems/GSWindow.cpp" "GameSystems/GSInput.h" "GameSystems/GSInput.cpp" "Scenes/Scene.h" "Scenes/Scene.cpp")
 
 if(CMAKE_VERSION VERSION_GREATER 3.12)
     set_property(TARGET DesktopWarfare PROPERTY CXX_STANDARD 20)
