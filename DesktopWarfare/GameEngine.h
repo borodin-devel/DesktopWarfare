@@ -1,14 +1,13 @@
-#include <string>
 #include <map>
+#include <string>
 
+#include "GameSystems/GSInput.h"
 #include "GameSystems/GSProgramOptions.h"
 #include "GameSystems/GSSettings.h"
 #include "GameSystems/GSWindow.h"
-#include "GameSystems/GSInput.h"
 #include "Scenes/Scene.h"
 
-class GameEngine
-{
+class GameEngine {
 public:
     GameEngine() = default;
     ~GameEngine() = default;

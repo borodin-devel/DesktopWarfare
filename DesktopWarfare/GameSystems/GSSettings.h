@@ -4,11 +4,9 @@
 
 class GameEngine;
 
-class GSSettings
-{
+class GSSettings {
 public:
-    struct Video
-    {
+    struct Video {
         const std::string windowTitle = "Desktop Warfare";
         const int windowMinWidth = 320;
         const int windowMinHeight = 240;

@@ -15,6 +15,11 @@ if(POLICY CMP0141)
     set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
+# Set build type if not provided
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Build type (Debug or Release)" FORCE)
+endif()
+
 message("\nInlining CMake scripts")
 # Embedded CMake scripts
 include(CMakePrintHelpers)
@@ -48,10 +53,10 @@ FetchContent_MakeAvailable(raylib_cpp)
 # Boost dependency
 FetchContent_Declare(
     Boost
-    URL https://github.com/boostorg/boost/releases/download/boost-1.81.0/boost-1.81.0.tar.xz
-    URL_MD5 6cf0cdd797bca685910d527ae3c08cb3
+    URL https://github.com/boostorg/boost/releases/download/boost-1.86.0/boost-1.86.0-cmake.tar.xz
     DOWNLOAD_EXTRACT_TIMESTAMP ON
 )
+set(BOOST_ENABLE_CMAKE ON) # Enable CMake support for Boost
 set(Boost_USE_STATIC_LIBS ON)  # only find static libs
 set(Boost_USE_DEBUG_LIBS ON)
 set(Boost_USE_RELEASE_LIBS ON)

@@ -9,8 +9,7 @@ GSProgramOptions::GSProgramOptions(GameEngine& gameEngine)
 
 void GSProgramOptions::init(int argc, char* argv[])
 {
-    m_description.add_options()
-        ("help,h", "produce help message");
+    m_description.add_options()("help,h", "produce help message");
 
     po::store(po::parse_command_line(argc, argv, m_description), m_vm);
     po::notify(m_vm);

@@ -6,8 +6,7 @@ namespace po = boost::program_options;
 
 class GameEngine;
 
-class GSProgramOptions
-{
+class GSProgramOptions {
 public:
     GSProgramOptions(GameEngine& gameEngine);
     ~GSProgramOptions() = default;

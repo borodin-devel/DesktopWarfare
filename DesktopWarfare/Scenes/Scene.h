@@ -2,8 +2,7 @@
 
 class GameEngine;
 
-class Scene
-{
+class Scene {
 public:
     Scene(GameEngine& gameEngine);
     virtual ~Scene() = default;

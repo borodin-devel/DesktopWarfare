@@ -2,8 +2,7 @@
 
 class GameEngine;
 
-class GSInput
-{
+class GSInput {
 public:
     GSInput(GameEngine& gameEngine);
     ~GSInput() = default;

@@ -2,8 +2,8 @@
 
 #include "../GameEngine.h"
 
-GSWindow::GSWindow(GameEngine& gameEngine) :
-    m_gameEngine(gameEngine)
+GSWindow::GSWindow(GameEngine& gameEngine)
+    : m_gameEngine(gameEngine)
 {
 }
 

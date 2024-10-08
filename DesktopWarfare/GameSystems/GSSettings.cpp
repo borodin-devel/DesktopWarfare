@@ -2,8 +2,8 @@
 
 #include "../GameEngine.h"
 
-GSSettings::GSSettings(GameEngine& gameEngine) :
-    m_gameEngine(gameEngine)
+GSSettings::GSSettings(GameEngine& gameEngine)
+    : m_gameEngine(gameEngine)
 {
 }
 

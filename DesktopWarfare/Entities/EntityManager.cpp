@@ -2,8 +2,7 @@
 
 void EntityManager::update()
 {
-    for (auto& e : m_entitiesToAdd)
-    {
+    for (auto& e : m_entitiesToAdd) {
         m_entities.push_back(e);
         m_entityMap[e->tag()].push_back(e);
     }
@@ -11,24 +10,20 @@ void EntityManager::update()
     m_entitiesToAdd.clear();
 
     // Remove all entities from map and vector that are marked for deletion
-    auto removeDestroyed = [](EntityVec& entities)
-    {
+    auto removeDestroyed = [](EntityVec& entities) {
         entities.erase(
             std::remove_if(
                 entities.begin(),
                 entities.end(),
-                [](std::shared_ptr<Entity> e)
-                {
+                [](std::shared_ptr<Entity> e) {
                     return e->isToBeDestroyed();
                 }),
-            entities.end()
-        );
+            entities.end());
     };
 
     removeDestroyed(m_entities);
 
-    for (auto& [tag, entityVec] : m_entityMap)
-    {
+    for (auto& [tag, entityVec] : m_entityMap) {
         removeDestroyed(entityVec);
     }
 }

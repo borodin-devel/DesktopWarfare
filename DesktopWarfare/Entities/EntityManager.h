@@ -9,8 +9,7 @@
 typedef std::vector<std::shared_ptr<Entity>> EntityVec;
 typedef std::map<std::string, EntityVec> EntityMap;
 
-class EntityManager
-{
+class EntityManager {
 public:
     EntityManager() = default;
 
@@ -18,7 +17,7 @@ public:
     std::shared_ptr<Entity> addEntity(const std::string& tag);
     EntityVec& getEntities();
     EntityVec& getEntities(const std::string& tag);
- 
+
 private:
     EntityVec m_entities;
     EntityVec m_entitiesToAdd;

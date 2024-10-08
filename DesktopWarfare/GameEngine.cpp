@@ -15,8 +15,7 @@ void GameEngine::run()
 
 void GameEngine::update()
 {
-    while (!m_window.ShouldClose())
-    {
+    while (!m_window.ShouldClose()) {
         ClearBackground(BLACK);
 
         BeginDrawing();

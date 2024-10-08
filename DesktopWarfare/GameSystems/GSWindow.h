@@ -6,8 +6,7 @@
 
 class GameEngine;
 
-class GSWindow : public raylib::Window
-{
+class GSWindow : public raylib::Window {
 public:
     GSWindow(GameEngine& gameEngine);
     ~GSWindow() = default;

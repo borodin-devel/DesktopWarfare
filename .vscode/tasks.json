@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build DesktopWarfare",
+            "type": "shell",
+            "command": "cmake --build ${workspaceFolder}/out/build/x64-debug --target DesktopWarfare",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$msCompile"]
+        }
+    ]
+}
