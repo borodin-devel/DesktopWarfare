@@ -1,4 +1,5 @@
 #include "GameEngine.h"
+#include "Scenes/MenuScene.h"
 
 void GameEngine::init(int argc, char** argv)
 {
@@ -6,6 +7,11 @@ void GameEngine::init(int argc, char** argv)
     m_settings.init();
     m_window.init();
     m_input.init();
+
+    MenuScene* menuScene = new MenuScene(*this);
+    m_scenes.insert({"menu", menuScene});
+
+    m_currentScene = m_scenes["menu"];
 }
 
 void GameEngine::run()
@@ -16,14 +22,13 @@ void GameEngine::run()
 void GameEngine::update()
 {
     while (!m_window.ShouldClose()) {
-        ClearBackground(BLACK);
-
-        BeginDrawing();
-        DrawText("Desktop Warfare", 10, 25, 20, WHITE);
-        EndDrawing();
+        m_currentScene->update();
     }
+
+    quit();
 }
 
 void GameEngine::quit()
 {
+    delete m_scenes["menu"];
 }

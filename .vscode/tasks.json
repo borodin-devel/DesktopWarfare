@@ -3,8 +3,12 @@
     "tasks": [
         {
             "label": "build DesktopWarfare",
-            "type": "shell",
-            "command": "cmake --build ${workspaceFolder}/out/build/x64-debug --target DesktopWarfare",
+            "type": "process",
+            "command": "cmake",
+            "args": [
+                "--build", "${workspaceFolder}/out/build/${command:cmake.activeBuildPresetName}",
+                "--parallel", "8"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true

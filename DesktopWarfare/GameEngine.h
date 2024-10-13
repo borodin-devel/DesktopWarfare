@@ -23,7 +23,7 @@ public:
     GSInput& getInput() { return m_input; }
 
 private:
-    Scene* currentScene() { return m_scenes[m_currentScene]; }
+    Scene* currentScene() { return m_currentScene; }
 
 private:
     bool m_isRunning = false;
@@ -34,5 +34,5 @@ private:
     GSInput m_input = GSInput(*this);
 
     std::map<std::string, Scene*> m_scenes;
-    std::string m_currentScene = "";
+    Scene* m_currentScene = nullptr;
 };
